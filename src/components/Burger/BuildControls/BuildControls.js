@@ -4,29 +4,33 @@ import BuildControl from './BuildControl/BuildControl'
 import classes from './BuildControls.module.css'
 
 const controls = [
-    { label: 'Salad',  type: 'salad' },
-    { label: 'Bacon',  type: 'bacon' },
-    { label: 'Cheese', type: 'cheese'},
-    { label: 'Meat',   type: 'meat'  },
-];
-
+  { label: 'Salad', type: 'salad' },
+  { label: 'Bacon', type: 'bacon' },
+  { label: 'Cheese', type: 'cheese' },
+  { label: 'Meat', type: 'meat' },
+]
 
 const BuildControls = (props) => {
-  return(
+  return (
     <div className={classes.BuildControls}>
-      <p>Current Price: <strong>${props.totalPrice.toFixed(2)}</strong></p>
-      {
-        controls.map((ctrl) => {
-          return <BuildControl
+      <p>
+        Current Price: <strong>${props.totalPrice.toFixed(2)}</strong>
+      </p>
+      {controls.map((ctrl) => {
+        return (
+          <BuildControl
             key={ctrl.label}
             label={ctrl.label}
             type={ctrl.type}
             added={() => props.ingredientAdded(ctrl.type)}
             removed={() => props.ingredientRemoved(ctrl.type)}
-            disabled={props.disabledInfo[ctrl.type] }
+            disabled={props.disabledInfo[ctrl.type]}
           />
-        })
-      }
+        )
+      })}
+      <button className={classes.OrderButton} disabled={!props.purchasable}>
+        ORDER NOW
+      </button>
     </div>
   )
 }
