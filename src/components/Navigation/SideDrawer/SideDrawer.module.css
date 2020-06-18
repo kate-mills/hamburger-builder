@@ -1,0 +1,35 @@
+/* visible on smaller devices */
+.SideDrawer {
+  position: fixed; /* always on page even if scrolling */
+  width: 280px;
+  max-width: 70%; /* even on super narrow devices it doesnt cover screen */
+  height: 100%;
+  left: 0; /* full SideDrawer on screen */
+  top:0;
+  z-index: 200; /* needs to be above modal backdrop */
+  background-color: white;
+  padding: 32px 16px;
+  box-sizing: border-box; /* adjust size to the padding */
+  transition: transform 0.3s ease-out; /* Animate transform:fn for classes (.Open .Close) w/ ease-out over .3s */
+}
+
+/* hide on larger devices */
+@media (min-width: 500px) {
+  .SideDrawer {
+    display: none;
+  }
+}
+
+.Open {
+  transform: translateX(0);
+}
+
+.Close {
+  transform: translateX(-100%);
+}
+
+.Logo {
+  height: 11%;
+  margin-bottom: 32px;
+}
+
