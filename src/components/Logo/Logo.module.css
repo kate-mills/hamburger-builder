@@ -1,8 +1,9 @@
+/* larger screens */
 .Logo {
   background-color: white;
   padding: 8px;
-  height: 80%;
-  box-sizing: border-box; /* so 80% also includes the padding */
+  height: 100%;
+  box-sizing: border-box;/*so total height includes padding*/
   border-radius: 5px;
 }
 
