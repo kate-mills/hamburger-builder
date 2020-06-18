@@ -49,7 +49,10 @@ class BurgerBuilder extends Component {
     this.updatePurchaseState(updatedIngredients)
   }
   orderingNowHandler = () => {
-    return this.setState({ orderingNow: true })
+    this.setState({ orderingNow: true })
+  }
+  closeModalHandler = () => {
+    this.setState({ orderingNow: false })
   }
   render() {
     const disabledInfo = {
@@ -60,7 +63,10 @@ class BurgerBuilder extends Component {
     }
     return (
       <Aux>
-        <Modal show={this.state.orderingNow}>
+        <Modal
+          closeModal={this.closeModalHandler}
+          show={this.state.orderingNow}
+        >
           {' '}
           <OrderSummary ingredients={this.state.ingredients} />{' '}
         </Modal>
