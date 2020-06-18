@@ -1,0 +1,18 @@
+.Toolbar {
+  height: 56px;
+  width: 100%;
+  position: fixed;/* always at top left*/
+  top: 0;
+  left: 0;
+  background-color: #703B09;
+  display: flex;
+  justify-content: space-between;/* horizontal */
+  align-items: center;/* vertical */
+  padding: 0 20px;
+  box-sizing: border-box;/* make sure Toolbar is sized correctly even w/ padding */
+  z-index: 90;/* higher num, higher visibility (note: modile-backdrop 100 )*/
+}
+
+.Toolbar nav {
+  height: 100%;/*nav items should span full height of Toolbar*/
+}
