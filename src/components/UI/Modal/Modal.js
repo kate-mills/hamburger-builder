@@ -5,14 +5,13 @@ import Aux from '../../../hoc/Aux'
 import Backdrop from '../Backdrop/Backdrop'
 
 class Modal extends React.Component {
-
-  shouldComponentUpdate (nextProps, nextState) {
+  shouldComponentUpdate(nextProps, nextState) {
     if (nextProps.show !== this.props.show) {
-      return true;
+      return true
     }
   }
 
-  render () {
+  render() {
     return (
       <Aux>
         <Backdrop show={this.props.show} clicked={this.props.modalClosed} />
