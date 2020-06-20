@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'https://wizard-burgers.firebaseio.com/',
+  baseURL: process.env.REACT_APP_FIREBASE_ORDERS,
 })
 
 export default instance
